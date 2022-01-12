@@ -21,6 +21,9 @@ def rename(showname,season,filetype):
         os.rename(directory[i], filename)
         print(f"After Renaming: {os.listdir()}")
 
+inShowName = input("Show Name: ")
+inSeasons = int(input("Season: "))
+inFileType = "."+input("File Type: ")
 rename(inShowName,inSeason,inFileType)
 
 
