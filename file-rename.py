@@ -20,8 +20,8 @@ def rename(showname,season,filetype):
         print(f"Before Renaming: {os.listdir()}")
         os.rename(directory[i], filename)
         print(f"After Renaming: {os.listdir()}")
-   
-rename("The Simpsons",2,".mp4")
+
+rename(inShowName,inSeason,inFileType)
 
 
 
