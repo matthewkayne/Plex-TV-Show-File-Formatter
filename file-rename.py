@@ -22,7 +22,7 @@ def rename(showname,season,filetype):
         print(f"After Renaming: {os.listdir()}")
 
 inShowName = input("Show Name: ")
-inSeasons = int(input("Season: "))
+inSeason = int(input("Season: "))
 inFileType = "."+input("File Type: ")
 rename(inShowName,inSeason,inFileType)
 
