@@ -1,10 +1,13 @@
 import os
 
-def rename(showname,season,filetype):
-    
-    directory = os.listdir()
-    directory.remove("file-rename.py")
-    files=len(directory)
+def rename(showname,season,filetype,path):
+    if path == "":
+        directory = os.listdir()
+        directory.remove("file-rename.py")     
+    else:  
+        directory = os.listdir(path)   
+      
+    files = len(directory)
 
     for i in range(files):
         if season < 10:
@@ -16,15 +19,16 @@ def rename(showname,season,filetype):
         else:
             episodeString=str(i+1)
             
-        filename = f"{showname} - s{seasonString}e{episodeString}{filetype}"
-        print(f"Before Renaming: {os.listdir()}")
-        os.rename(directory[i], filename)
-        print(f"After Renaming: {os.listdir()}")
+        filename = f"{path}{showname} - s{seasonString}e{episodeString}{filetype}"
+    
+        os.rename(f"{path}{directory[i]}", filename)
 
+    print(f"Before Renaming: {directory}")
+    print(f"After Renaming: {os.listdir(path)}")
+
+inPath = input("Path for Shows (Enter for current directory): ")
 inShowName = input("Show Name: ")
 inSeason = int(input("Season: "))
 inFileType = "."+input("File Type: ")
-rename(inShowName,inSeason,inFileType)
 
-
-
+rename(inShowName,inSeason,inFileType,inPath)
