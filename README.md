@@ -4,4 +4,4 @@
 
 Renames an orded directory of a TV season into Plexs' preferred format
 
-Run buy calling `python3 plex_rename [path to folder (leave blank if current directory)]`
+Run buy calling `plex-rename`

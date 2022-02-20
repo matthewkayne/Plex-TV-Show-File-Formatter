@@ -1,7 +1,7 @@
 import os
-import sys
 
-def rename(path):
+def rename():
+    path = input("Path to folder (Enter if current directory): ")
     showname = input("Show Name: ")
     season = int(input("Season: "))
     filetype = input("File Type: ")
@@ -29,8 +29,4 @@ def rename(path):
         os.rename(f"{path}{directory[i]}", filename)
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        path = sys.argv[1]
-    else:
-        path=""
-    rename(path)
+    rename()
