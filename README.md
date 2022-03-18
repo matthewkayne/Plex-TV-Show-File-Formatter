@@ -4,4 +4,10 @@
 
 Renames an orded directory of a TV season into Plexs' preferred format
 
+To install the package use:
+
+```bash
+pip install Plex-TV-Show-File-Formatter
+```
+
 Run buy calling `plex-rename`
