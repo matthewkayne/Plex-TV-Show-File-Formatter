@@ -5,9 +5,9 @@ import os
 def rename():
     """Rename"""
     path = input("Path to folder (Enter if current directory): ")
-    showname = input("Show Name: ")
+    show_name = input("Show Name: ")
     season = int(input("Season: "))
-    filetype = input("File Type: ")
+    file_type = input("File Type: ")
 
     if path == "":
         directory = [f for f in os.listdir() if not f.startswith('.')]
@@ -19,17 +19,17 @@ def rename():
 
     for i in range(files):
         if season < 10:
-            seasonString = "0"+str(season)
+            season_string = "0"+str(season)
         else:
-            seasonString = str(season)
+            season_string = str(season)
         if i < 10:
-            episodeString = "0"+str(i+1)
+            episode_string = "0"+str(i+1)
         else:
-            episodeString = str(i+1)
+            episode_string = str(i+1)
 
-        filename = f"{path}{showname} - s{seasonString}e{episodeString}.{filetype}"
+        file_name = f"{path}{show_name} - s{season_string}e{episode_string}.{file_type}"
 
-        os.rename(f"{path}{directory[i]}", filename)
+        os.rename(f"{path}{directory[i]}", file_name)
 
 
 if __name__ == "__main__":
